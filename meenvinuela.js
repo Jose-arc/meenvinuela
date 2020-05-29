@@ -34,6 +34,27 @@ stylesheet.textContent =
     "-webkit-transform: scale(1.5); " +
     "transform: scale(1.5); " +
     "z-index: 1; " +
+    "}" +
+    ".tooltiptext{" +
+    "visibility: hidden; " +
+    "width: 120px; " +
+    "background-color: black; " +
+    "color: #fff; " +
+    "border-radius: 6px; " +
+    "padding: 10px; " +
+    "}" +
+    ".tooltiptext:before{" +
+    "content: ''; " +
+    "position: absolute;" +
+    "width: 0;" +
+    "height: 0;" +
+    "border-top: 20px solid chocolate;" +
+    "border-right: 18px solid transparent;" +
+    "border-left: 18px solid transparent;" +
+    "margin: 100px 0 0 350px;" +
+    "}" +
+    ".btn-meenvinuela:hover .tooltiptext{" +
+    "visibility: visible; " +
     "}";
 
 let random = makeid();
@@ -42,7 +63,8 @@ let div = document.createElement('div');
 div.id = random;
 div.className = 'btn-meenvinuela';
 div.innerHTML =
-    "<img src=\"https://raw.githubusercontent.com/Jose-arc/meenvinuela/master/img/vinuela.png\" alt=\"\">";
+    "<img src=\"https://raw.githubusercontent.com/Jose-arc/meenvinuela/master/img/vinuela.png\" alt=\"\">" +
+    "<div class=\"tooltiptext\">Tooltip text</div>";
 document.body.appendChild(div);
 
 let btn_like = document.getElementById(random).addEventListener("click", soundLisent, false);
