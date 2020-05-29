@@ -38,8 +38,22 @@ article_child_btn.innerHTML = `
 
 `;
 
+let style = document.createElement('style');
+document.head.appendChild(style);
+style.textContent = "#magic:hover img {" +
+    "-webkit-transform:scale(2);" +
+    "-moz-transform:scale(2);" +
+    "-ms-transform:scale(2);" +
+    "-o-transform:scale(2);" +
+    "transform:scale(2);" +
+    "z-index: 1" +
+    "}";
+
 let btn_like = document.getElementById('magic').addEventListener("click", soundLisent, false);
 
 function soundLisent() {
-    alert("me enviñuela presente");
+    //alert("me enviñuela presente");
+    var sound = document.createElement('audio');
+    sound.src = "https://raw.githubusercontent.com/Jose-arc/meenvinuela/master/sound.mp3";
+    sound.play();
 }
